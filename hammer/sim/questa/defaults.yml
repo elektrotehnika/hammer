@@ -1,0 +1,9 @@
+sim.questa:
+  # Tool version
+  version: "23.1std"
+  # Installation path
+  questa_home: "~/intelFPGA/${sim.questa.version}"
+  questa_home_meta: lazysubst
+  # Executable
+  questa_bin: "qhsim"
+  questa_bin_meta: lazysubst
