@@ -1,8 +1,8 @@
-# PDK setup
+# PDK setup (if needed, replace relative path (~) with apsolute path)
 technology.sky130.sky130A: ~/share/pdk/sky130A
 technology.sky130.sram22_sky130_macros: ~/sram22_sky130_macros
 
-# Tools' setup
+# Tools' setup (if needed, replace relative path (~) with apsolute path)
 synthesis.yosys.yosys_bin: ~/.conda-yosys/bin/yosys
 par.openroad.openroad_bin: ~/.conda-openroad/bin/openroad
 par.openroad.klayout_bin: ~/.conda-klayout/bin/klayout

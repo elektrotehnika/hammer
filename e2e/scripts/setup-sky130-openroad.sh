@@ -34,16 +34,16 @@ make install
 
 cd ${e2e_dir}
 
-export ENV_YML=${e2e_dir}/configs-env/my-env.yml
-echo "# My environment configs" > $ENV_YML
-echo "# pdk" > $ENV_YML
-echo "technology.sky130.sky130A: ${PREFIX}/share/pdk/sky130A" >> $ENV_YML
-echo "technology.sky130.sram22_sky130_macros: ${PREFIX}/sram22_sky130_macros" >> $ENV_YML
-echo "" >> $ENV_YML
-echo "# tools" >> $ENV_YML
-echo "synthesis.yosys.yosys_bin: ${PREFIX}/.conda-yosys/bin/yosys" >> $ENV_YML
-echo "par.openroad.openroad_bin: ${PREFIX}/.conda-openroad/bin/openroad" >> $ENV_YML
-echo "par.openroad.klayout_bin: ${PREFIX}/.conda-klayout/bin/klayout" >> $ENV_YML
-echo "drc.klayout.klayout_bin: ${PREFIX}/.conda-klayout/bin/klayout" >> $ENV_YML
-echo "drc.magic.magic_bin: ${PREFIX}/.conda-signoff/bin/magic" >> $ENV_YML
-echo "lvs.netgen.netgen_bin: ${PREFIX}/.conda-signoff/bin/netgen" >> $ENV_YML
+# export ENV_YML=${e2e_dir}/configs-env/my-env.yml
+# echo "# My environment configs" > $ENV_YML
+# echo "# pdk" > $ENV_YML
+# echo "technology.sky130.sky130A: ${PREFIX}/share/pdk/sky130A" >> $ENV_YML
+# echo "technology.sky130.sram22_sky130_macros: ${PREFIX}/sram22_sky130_macros" >> $ENV_YML
+# echo "" >> $ENV_YML
+# echo "# tools" >> $ENV_YML
+# echo "synthesis.yosys.yosys_bin: ${PREFIX}/.conda-yosys/bin/yosys" >> $ENV_YML
+# echo "par.openroad.openroad_bin: ${PREFIX}/.conda-openroad/bin/openroad" >> $ENV_YML
+# echo "par.openroad.klayout_bin: ${PREFIX}/.conda-klayout/bin/klayout" >> $ENV_YML
+# echo "drc.klayout.klayout_bin: ${PREFIX}/.conda-klayout/bin/klayout" >> $ENV_YML
+# echo "drc.magic.magic_bin: ${PREFIX}/.conda-signoff/bin/magic" >> $ENV_YML
+# echo "lvs.netgen.netgen_bin: ${PREFIX}/.conda-signoff/bin/netgen" >> $ENV_YML
