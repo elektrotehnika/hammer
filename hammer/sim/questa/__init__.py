@@ -91,7 +91,9 @@ class questa(HammerSimTool, DummyHammerTool):
         f.write(f"vsim  -work {lib_name} opt_{tb_name}\n")
         # Add waves
         f.write("# Add waves\n")
-        f.write("add wave -r *\n")
+        f.write(f"add wave -group TB -color cyan -internal {tb_name}/*\n")
+        f.write(f"add wave -ports {tb_dut}/*\n")
+        f.write(f"add wave -group INT -color orange -r -internal {tb_dut}/*\n")
         # Log simulation data
         f.write("# Log simulation data\n")
         f.write("log -r *\n") # potentially redundant
