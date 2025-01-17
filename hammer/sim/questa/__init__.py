@@ -85,10 +85,10 @@ class questa(HammerSimTool, DummyHammerTool):
         f.write("# Optimize the design\n")
         f.write("# +acc provides visibility for debugging purposes\n")
         f.write("# -o provides the name of the optimized design file name\n")
-        f.write(f"vopt -work {lib_name} -timescale {timescale} {sdf_args} +acc {tb_name} -o opt_{tb_name}\n")
+        f.write(f"vopt -debugdb -work {lib_name} -timescale {timescale} {sdf_args} +acc {tb_name} -o opt_{tb_name}\n")
         # Load the design
         f.write("# Load the design\n")
-        f.write(f"vsim  -work {lib_name} opt_{tb_name}\n")
+        f.write(f"vsim -debugDB -sdfnoerror -work {lib_name} opt_{tb_name}\n")
         # Add waves
         f.write("# Add waves\n")
         f.write(f"add wave -group TB -color cyan -internal {tb_name}/*\n")

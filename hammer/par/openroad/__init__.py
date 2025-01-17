@@ -1261,8 +1261,12 @@ class OpenROADPlaceAndRoute(OpenROADPlaceAndRouteTool):
     def add_fillers(self) -> bool:
         self.check_detailed_placement()
         """add decap and filler cells"""
+        use_fillers = self.get_setting("vlsi.inputs.use_fillers")
         decaps = self.technology.get_special_cell_by_type(CellType.Decap)
-        stdfillers = self.technology.get_special_cell_by_type(CellType.StdFiller)
+        if use_fillers:
+            stdfillers = self.technology.get_special_cell_by_type(CellType.StdFiller)
+        else:
+            stdfillers = []
 
         fill_cells = []
         if len(decaps) == 0:
@@ -1349,6 +1353,8 @@ class OpenROADPlaceAndRoute(OpenROADPlaceAndRouteTool):
     def detailed_route(self) -> bool:
         metals=self.get_stackup().metals[1:]
 
+        route_iter = self.get_setting("vlsi.route.iter")
+
         self.block_append(f"""
         ################################################################
         # Detailed routing
@@ -1364,6 +1370,7 @@ class OpenROADPlaceAndRoute(OpenROADPlaceAndRouteTool):
             -output_drc {self.run_dir}/{self.top_module}_route_drc.rpt \\
             -output_maze {self.run_dir}/{self.top_module}_maze.log \\
             -save_guide_updates \\
+            -droute_end_iter {route_iter} \\
             -verbose 1
         """)
         return True
